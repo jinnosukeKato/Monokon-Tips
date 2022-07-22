@@ -198,6 +198,8 @@ Arduino IDEを使うのが標準だけど、 Jetbrains の [CLion](https://www.j
 ### 言語仕様
 
 俺はC系に詳しくないので間違ってたらごめんなさい
+  
+`HIGH`は0以外の値、`LOW`は0と等価なので、頭いい人はbit演算とか使うと関東レベルでも楽に解けるかも
 
 Cに準拠していると思われがちなArduino言語だけど、実はC++11なのでfor-eachとかが普通に使える  
 正確には`avr-g++`でAVR向けに[クロスコンパイルしている](https://garretlab.web.fc2.com/arduino/introduction/compile_process/)  
