@@ -191,7 +191,8 @@ delayが長いほど光り方が弱まってしまうので、ベストな光の
 
 ### IDEの選択
 
-Arduino IDEを使うのが標準だけど、 Jetbrains の [CLion](https://www.jetbrains.com/ja-jp/clion/) などの強力なIDE使えばめちゃくちゃ楽できそう
+Arduino IDEを使うのが標準だけど、 Jetbrains の [CLion](https://www.jetbrains.com/ja-jp/clion/) などの強力なIDE使えばめちゃくちゃ楽できそう  
+やってみたけどPlatform.ioがうまく入らず断念
 
 ちなみに Jetbrains の IDE は学生ならすべて無料なので強くお勧めする
 
@@ -208,6 +209,9 @@ Cに準拠していると思われがちなArduino言語だけど、実はC++11�
 
 そもそもAVR向けにコンパイルできればいいので、今Bunで話題のZig([成功してる](https://zenn.dev/k_abe/articles/1dc65f8345d908))とか最近でたCarbon(C++互換らしい)とか特に[Rust](https://book.avr-rust.com/)でやったら誰も採点できないみたいな風になりそうで面白いから誰かやってくれ  
 ゴリゴリのC++とか高度なCとかでやっても普通に採点できるのかみたいなところはあるけどね
+
+Zigはavrdudeを入れるだけでできるっぽい  
+自宅PCでやったけど日本語ユーザ名対応してなくて断念(0.11か0.12で対応するっぽい)
 
 ### そもそも
 
