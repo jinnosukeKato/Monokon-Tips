@@ -23,8 +23,14 @@
 
 回路の作る人によってプルアップ・プルダウンとかコネクタのパターン変わると思うから臨機応変に対応できるとよい
 
-`#define`でピン番号は置き換えするのがベター  
+`#define`でピン番号とかは置き換えするのがベター  
 できれば練習から統一しておくと楽
+
+例)
+```c++
+#define BUTTON_PIN 22
+#define BUTTON_ON HIGH
+```
 
 ### タクトスイッチ
 
@@ -37,7 +43,7 @@
 ### 可変抵抗
 
 `analogRead`で読み取って値の範囲で分岐させることが求められることが多い  
-**analogReadの場合、ピンはAから始まる番号になる** `例) A1, A2, A3`  
+**analogReadの場合、ピンはAから始まる番号になる** `例) A0, A1, A2`  
 `pinMode(A1, INPUT);`も忘れずに
 
 0から1023までの値で読み取れる
@@ -106,6 +112,8 @@ clk(); // クロック
 analogWrite(4, 100); // ON
 analogWrite(4, 0); // OFF
 ```
+
+[`tone`](http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2484)を使うと周波数の指定ができ、消音する処理がいらなくなる
 
 ### 7セグメント
 
