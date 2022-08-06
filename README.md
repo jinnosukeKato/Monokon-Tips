@@ -59,8 +59,7 @@ DCモータとステッピングモータを制御するときに必要(Dフリ�
 間隔が短すぎるとステッピングモータが回らない場合がある
 
 ```c++
-// clockは予約語なので使えない
-void clk() {
+void clock() {
   digitalWrite(5, HIGH);
   delay(3); //2-5msくらいがよい
   digitalWrite(5, LOW);
@@ -77,11 +76,11 @@ LOWを入れて止めると若干惰性で動くので、ピタっと止めた�
 ```c++
 digitalWrite(16, HIGH); // 両側にHIGHを入れる
 digitalWrite(17, HIGH);
-clk(); // クロック
+clock();
 delay(5); // ちょっと待つ
 digitalWrite(16, LOW); // 負荷がかかるのでLOWにする
 digitalWrite(17, LOW);
-clk(); // クロック
+clock();
 ```
 
 ### ステッピングモータ
