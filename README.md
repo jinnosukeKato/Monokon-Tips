@@ -189,18 +189,18 @@ DCモータが動いちゃうときは16,17番ピンをLOWにしてからクロ�
 
 delayが長いほど光り方が弱まってしまうので、ベストな光の具合になるようにアルゴリズムやdelayの秒数を研究してほしい  
 また、クロックのdelayを1msとかに設定してもステッピングモータが回る場合があるので、そこも調整してみてほしい
+
 ## 以下は直接関係ない内容です
 
 <details>
 <summary>気になる人だけ読んでもらえればOKです</summary>
-ここから下は将来誰かがやってくれると面白いと思う内容
-
-全然直接的には関係ないです 読み飛ばしてくれてOK
 
 ### IDEの選択
 
-Arduino IDEを使うのが標準だけど、 Jetbrains の [CLion](https://www.jetbrains.com/ja-jp/clion/) などの強力なIDE使えばめちゃくちゃ楽できそう  
-やってみたけどPlatform.ioがうまく入らず断念
+Arduino IDE は v2.0 を強く推奨する  
+設定で有効化すると関数名等の補完が効く
+
+Arduino IDE を使うのが標準だけど、 Jetbrains の [CLion](https://www.jetbrains.com/ja-jp/clion/) などの強力なIDEを使用すると良いかもしれない
 
 ちなみに Jetbrains の IDE は学生ならすべて無料なので強くお勧めする
 
@@ -216,7 +216,4 @@ Cに準拠していると思われがちなArduino言語だけど、実はC++11�
 詳しくは Arduino forum とかを漁ると[出てくる](https://forum.arduino.cc/t/arduino-and-c-17-avr-gcc-8-x/545021/2)かも
 
 そもそもAVR向けにコンパイルできればいいので、今Bunで話題のZig([成功してる](https://zenn.dev/k_abe/articles/1dc65f8345d908))とか最近でたCarbon(C++互換らしい)とか[Rust](https://book.avr-rust.com/)でもやれそう
-ゴリゴリのC++とか高度なCとかでやっても普通に採点できるのかみたいなところはある
-
-Zigはavrdudeを入れるだけでできるっぽい  
-自宅PCでやったけど日本語ユーザ名対応してなくて断念(対応するっぽい)
+ちなみに県大会はプログラムの内容の採点は1問目しかされない(経験者数: n=2)
