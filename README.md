@@ -176,9 +176,9 @@ void segAndStep(int l, int r) {
     digitalWrite(3, LOW);
     step(n); // 1ステップ進ませる関数
     segL(l); // 左セグメントを点灯させる関数
-    delay(1); // ここを調整 限界まで短くてよさげ(delayMilliseconds使ってもよい)
+    delay(1); // ここを調整 (1ステップ進めるのに要する時間より点灯時間を長くすると違和感が少ない) 
     segR(r); // 右セグメントを点灯させる関数
-    delay(1); // ここを調整 限界まで短くてよさげ(delayMilliseconds使ってもよい)
+    delay(1); // ここも調整
   }
 }
 ```
