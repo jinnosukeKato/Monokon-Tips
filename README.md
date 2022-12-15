@@ -215,12 +215,16 @@ Arduino IDE を使うのが標準だけど、 Jetbrains の [CLion](https://www.
 
 俺はC系に詳しくないので間違ってたらごめんなさい
   
-`HIGH`は0以外の値、`LOW`は0と等価なので、頭いい人はbit演算とか使うと関東レベルでも楽に解けるかも
+`HIGH`は0以外の値、`LOW`は0と等価なので、bit演算を使うと早く解ける問題があるかもしれない
 
 Cに準拠していると思われがちなArduino言語だけど、実はC++11なのでfor-eachとかが普通に使える  
 正確には`avr-g++`でAVR向けに[クロスコンパイルしている](https://garretlab.web.fc2.com/arduino/introduction/compile_process/)  
-なので設定ファイルいじったりコンパイラ差し替えればC++17とかも行けたはず  
-詳しくは Arduino forum とかを漁ると[出てくる](https://forum.arduino.cc/t/arduino-and-c-17-avr-gcc-8-x/545021/2)かも
+なので設定ファイルいじったりコンパイラ差し替えればC++17なども使用可能  
+詳しくは Arduino forum とかを漁ると[出てくる](https://forum.arduino.cc/t/arduino-and-c-17-avr-gcc-8-x/545021/2)かも  
+ゲームのエンジンを触ったことがあったり最新のC++に造詣が深い人は試してみてほしい
 
-そもそもAVR向けにコンパイルできればいいので、今Bunで話題のZig([成功してる](https://zenn.dev/k_abe/articles/1dc65f8345d908))とか最近でたCarbon(C++互換らしい)とか[Rust](https://book.avr-rust.com/)でもやれそう
-ちなみに県大会はプログラムの内容の採点は1問目しかされない(経験者数: n=2)
+そもそもAVR向けにコンパイルできる言語かつ、Cのヘッダファイルを読み込める言語であれば、どんな言語でもArduino向けのプログラム自体は記述可能
+
+### 採点について
+
+県大会はプログラムの内容の採点は1問目しかされなかった(2021, 2022)
