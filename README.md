@@ -6,14 +6,20 @@
 
 各部品の制御ごとに関数にして、それを組み立てるようにするのが基本
 
-それぞれの具体的な実装は[俺の書いたコード](https://github.com/jinnosukeKato/Monokon-Template/blob/master/monokon_template.ino)を**参考**にするといいと思う
-あくまで参考に、まずは自分で考えてみよう
+それぞれの具体的な実装は[俺の書いたコード](https://github.com/jinnosukeKato/Monokon-Kanagawa-2022)を参考程度にどうぞ  
+**まずは自分で考えてみよう**
 
 ## アルゴリズム
 
 ### 一度しか動かさなくてよいもの(起動後だけ)
 
-`void setup() {}`の中に書くと簡単
+`void setup() {}`の中に書く  
+`pinMode`とかをよく書く
+
+#### pinMode について
+
+実は書かなくても動作する場合がほとんどだが、[リファレンス](https://docs.arduino.cc/learn/microcontrollers/digital-pins)にあるように、
+`pinMode`は内部インピーダンスを変更しているので、ちゃんと記述したほうが良い
 
 ### ボタンが押されたらor押されている間の処理
 
@@ -56,7 +62,8 @@
 
 DCモータとステッピングモータを制御するときに必要(Dフリップフロップが間にあるため)
 
-間隔が短すぎるとステッピングモータが回らない場合がある
+間隔が短すぎるとステッピングモータが回らない場合がある  
+長すぎると7セグなどの動作に支障をきたす場合が多い
 
 ```c++
 void clock() {
@@ -69,7 +76,7 @@ void clock() {
 ### DCモータ
 
 クロックが必要
-Arduino側電源を抜いても動き続ける(面倒くさいから気を付けたほうがいい)
+Arduino側電源を抜いても動き続ける(うるさいから気を付けたほうがいい)
 
 LOWを入れて止めると若干惰性で動くので、ピタっと止めたい場合は下のようにする
 
@@ -78,7 +85,7 @@ digitalWrite(16, HIGH); // 両側にHIGHを入れる
 digitalWrite(17, HIGH);
 clock();
 delay(5); // ちょっと待つ
-digitalWrite(16, LOW); // 負荷がかかるのでLOWにする
+digitalWrite(16, LOW); // 負荷がかかるのでLOWにしたほうがいいと思う
 digitalWrite(17, LOW);
 clock();
 ```
@@ -112,14 +119,14 @@ analogWrite(4, 100); // ON
 analogWrite(4, 0); // OFF
 ```
 
-[`tone`](http://www.musashinodenpa.com/arduino/ref/index.php?f=0&pos=2484)を使うと周波数の指定ができ、消音する処理がいらなくなる
+[`tone`](https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/)を使うと周波数の指定ができ、消音する処理がいらなくなる
 
 ### 7セグメント
 
 ピンは一番上のセグメントから時計周りで最後に中央→点と覚えると簡単
 
 下のコードのように二次元配列を用いてパターン作成すると良いと思う  
-`HIGH`, `LOW` を使わずに `0`, `1` を使うとミスがわかりやすくていい
+`HIGH`, `LOW` を使わずに `1`, `0` を使うとミスがわかりやすくていい
 
 ```c++
 int segPattern[10][8] = {
